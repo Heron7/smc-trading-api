@@ -1,6 +1,7 @@
 {
   "name": "smc-trading-api",
   "version": "1.0.0",
+  "main": "api/analyze.js",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.24.2"
   }
