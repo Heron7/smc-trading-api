@@ -1,10 +1,10 @@
-import Anthropic from '@anthropic-ai/sdk';
+const Anthropic = require('@anthropic-ai/sdk');
 
 const anthropic = new Anthropic({
   apiKey: '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'
 });
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Enable CORS for Horizon to access
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -102,4 +102,4 @@ export default async function handler(req, res) {
       details: error.message
     });
   }
-}
+};
