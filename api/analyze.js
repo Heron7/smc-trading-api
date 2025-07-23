@@ -5,7 +5,7 @@ const anthropic = new Anthropic({
 });
 
 module.exports = async function handler(req, res) {
-  // Enable CORS for Horizon to access
+  // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -40,7 +40,7 @@ module.exports = async function handler(req, res) {
             
             Charts provided in order: 5-minute, 15-minute, 1-hour, 4-hour timeframes.
             
-            Provide comprehensive analysis and return results in this exact JSON format:
+            Return analysis in this exact JSON format:
             {
               "marketStructure": {
                 "4h": {"trend": "BULLISH/BEARISH/NEUTRAL", "structure": "CHoCH/BOS/Consolidation", "keyLevel": "price level"},
@@ -58,7 +58,7 @@ module.exports = async function handler(req, res) {
                 "takeProfit1": "price",
                 "takeProfit2": "price", 
                 "takeProfit3": "price",
-                "rationale": "detailed explanation of setup"
+                "rationale": "detailed explanation"
               },
               "riskManagement": {
                 "rrRatio1": "1:X format",
